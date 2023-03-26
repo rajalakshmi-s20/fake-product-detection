@@ -1,0 +1,36 @@
+.home{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    background-color: grey;
+}
+
+.upload{
+    width: 25%;
+    height: 50%;
+    background: #fff;
+    border: 4px dashed #333;
+}
+
+.header a{
+    text-decoration: none;
+    color: #333;
+}
+
+.header p{
+    text-align: center;
+    font-family: cursive;
+    font-size: 30px;
+}
+
+.header li{
+    list-style: none;
+    display: inline;
+    margin-left: 25px;
+}
+
+.header li button{
+    float:right;
+}

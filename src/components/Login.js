@@ -8,9 +8,9 @@ export default function Login() {
                <Components.SignUpContainer signinIn={signIn}>
                    <Components.Form>
                        <Components.Title>Create Account</Components.Title>
-                       <Components.Input type='text' placeholder='Name' />
-                       <Components.Input type='email' placeholder='Email' />
-                       <Components.Input type='password' placeholder='Password' />
+                       <Components.Input type='text' placeholder='Name' id='name'/>
+                       <Components.Input type='email' placeholder='Email' id='email'/>
+                       <Components.Input type='password' placeholder='Password' id='pass'/>
                        <Components.Button>Sign Up</Components.Button>
                    </Components.Form>
                </Components.SignUpContainer>
@@ -18,10 +18,10 @@ export default function Login() {
                <Components.SignInContainer signinIn={signIn}>
                     <Components.Form>
                         <Components.Title>Sign in</Components.Title>
-                        <Components.Input type='email' placeholder='Email' />
-                        <Components.Input type='password' placeholder='Password' />
-                        <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
+                        <Components.Input type='email' placeholder='Email' id='email'/>
+                        <Components.Input type='password' placeholder='Password' id='pass'/>
                         <Components.Button>Sign In</Components.Button>
+                        <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
                     </Components.Form>
                </Components.SignInContainer>
  

@@ -66,22 +66,22 @@ width: 100%;
 
 
 export const Button = styled.button`
-   border-radius: 20px;
-   border: 1px solid #ff4b2b;
-   background-color: #ff4b2b;
-   color: #ffffff;
-   font-size: 12px;
-   font-weight: bold;
-   padding: 12px 45px;
-   letter-spacing: 1px;
-   text-transform: uppercase;
-   transition: transform 80ms ease-in;
-   &:active{
-       transform: scale(0.95);
-   }
-   &:focus {
-       outline: none;
-   }
+  border-radius: 20px;
+  border: 1px solid #ff4b2b;
+  background-color: #ff4b2b;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  &:active{
+      transform: scale(0.95);
+  }
+  &:focus {
+      outline: none;
+  }
 `;
 export const GhostButton = styled(Button)`
 background-color: transparent;
@@ -108,35 +108,35 @@ ${props =>
 `;
 
 export const Overlay = styled.div`
-background: #ff416c;
-background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
-background: linear-gradient(to right, #ff4b2b, #ff416c);
-background-repeat: no-repeat;
-background-size: cover;
-background-position: 0 0;
-color: #ffffff;
-position: relative;
-left: -100%;
-height: 100%;
-width: 200%;
-transform: translateX(0);
-transition: transform 0.6s ease-in-out;
-${props => (props.signinIn !== true ? `transform: translateX(50%);` : null)}
+  background: #ff416c;
+  background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #ffffff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+  ${props => (props.signinIn !== true ? `transform: translateX(50%);` : null)}
 `;
 
 export const OverlayPanel = styled.div`
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    text-align: center;
-    top: 0;
-    height: 100%;
-    width: 50%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
 `;
 
 export const LeftOverlayPanel = styled(OverlayPanel)`
@@ -145,9 +145,9 @@ export const LeftOverlayPanel = styled(OverlayPanel)`
 `;
 
 export const RightOverlayPanel = styled(OverlayPanel)`
-    right: 0;
-    transform: translateX(0);
-    ${props => props.signinIn !== true ? `transform: translateX(20%);` : null}
+  right: 0;
+  transform: translateX(0);
+  ${props => props.signinIn !== true ? `transform: translateX(20%);` : null}
 `;
 
 export const Paragraph = styled.p`

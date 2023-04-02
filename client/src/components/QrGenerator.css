@@ -1,0 +1,20 @@
+.qrcode_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.input_group{
+    margin-left: 100px;
+}
+
+input{
+    width: 80%;
+}
+
+button{
+    width: 50%;
+    margin-top: 20px;
+    margin-left: 50px;
+}

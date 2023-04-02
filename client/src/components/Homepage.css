@@ -1,36 +1,93 @@
-.home{
+body{
     margin: 0;
     padding: 0;
 }
 
-.navbar{
-    background-color: grey;
-}
-
-.upload{
-    width: 25%;
-    height: 50%;
-    background: #fff;
-    border: 4px dashed #333;
-}
-
-.header a{
+a{
     text-decoration: none;
-    color: #333;
+    color: #fff; 
 }
+
+.header{
+    margin-top: 20px;
+}
+
 
 .header p{
     text-align: center;
     font-family: cursive;
-    font-size: 30px;
+    font-size: 25px;
 }
 
-.header li{
-    list-style: none;
+span{
+    display: block;
+}
+
+.navbar{
+    background-color: #143f85;
+    margin-top: 20px;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+}
+
+nav li{
     display: inline;
+    float: left;
     margin-left: 25px;
 }
 
-.header li button{
-    float:right;
+nav a{
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 0;
+    color: #fff;
+}
+
+nav a:hover{
+    color: #fff;
+}
+
+.upload{
+    margin-top: 60px;
+    margin-left: 35%;
+    padding: 30px;
+    width: 35%;
+    border: 4px dashed #143f85;
+}
+
+.img-upload{
+    margin-left: 50px;
+}
+
+label{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 20%;
+    color: #143f85;
+}
+
+.image{
+    margin-left: 5%;
+}
+
+.or{
+    font-weight: bold;
+    color: #143f85;
+    margin-left: 45%;
+    margin-top: 20px;
+}
+
+.scan{
+    width: 70%;
+    border-radius: 5px;
+    border: 2px solid #143f85;
+    padding: 10px;
+    background-color: #143f85;
+    color: #fff;
+    margin-top: 0px;
 }

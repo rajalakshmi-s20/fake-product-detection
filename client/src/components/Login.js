@@ -1,9 +1,11 @@
 import React from "react";
 import * as Components from './Login-components.js';
+import './Login.css';
 
 export default function Login() {
     const [signIn, toggle] = React.useState(true);
     return(
+        <div className="login-signup">
         <Components.Container>
             <Components.SignUpContainer signinIn={signIn}>
                 <Components.Form>
@@ -51,5 +53,6 @@ export default function Login() {
                 </Components.Overlay>
             </Components.OverlayContainer>
         </Components.Container>
+        </div>
     );
 }

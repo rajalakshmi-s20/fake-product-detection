@@ -16,7 +16,7 @@ function App() {
           <Route exact path="/" element={<Homepage/>}/>
           <Route exact path="/login" element={<Login/>}/>
           <Route exact path="/qrgenerator" element={<QrGenerator/>}/>
-          <Route exact path="/qrcontainor" element={<QrContainer/>}/>
+          <Route exact path="/qrcontainer" element={<QrContainer/>}/>
         </Routes>
       </BrowserRouter>
   );

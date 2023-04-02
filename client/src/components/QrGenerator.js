@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { QRCodeCanvas } from "qrcode.react";
+import './QrGenerator.css';
 
 const QrGenerator = () => {
   const [id, setId] = useState("");
@@ -63,15 +64,17 @@ const QrGenerator = () => {
     <QRCodeCanvas
       id="qrCode"
       value={id}
-      size={300}
+      size={200}
       level={"H"}
     />
   );
 
   return (
-    <div className="qrcode__container">
+    <div className="qrcode_container">
+      <div className="qrcode">
       <div ref={qrRef}>{qrcode}</div>
-      <div className="input__group">
+      </div>
+      <div className="input_group">
         <form onSubmit={downloadQRCode}>
           <div>
           <label>Product ID</label>
@@ -114,7 +117,7 @@ const QrGenerator = () => {
           />
           </div>
           <div>
-          <label>Location</label>
+          <label>Company Location</label>
           <input
             type="text"
             value={location}

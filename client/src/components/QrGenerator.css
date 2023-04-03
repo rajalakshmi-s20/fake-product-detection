@@ -10,11 +10,12 @@
 }
 
 input{
+    margin-bottom: 8px;
     width: 80%;
 }
 
 button{
     width: 50%;
     margin-top: 20px;
-    margin-left: 50px;
+    margin-left: 60px;
 }

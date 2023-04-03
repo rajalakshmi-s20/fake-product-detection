@@ -8,6 +8,8 @@ export const Container = styled.div`
   overflow: hidden;
   width: 678px;
   max-width: 100%;
+  margin-top: 100px;
+  margin-left: 300px;
   min-height: 400px;
 `;
 
@@ -72,6 +74,8 @@ export const Button = styled.button`
   font-weight: bold;
   padding: 12px 45px;
   letter-spacing: 1px;
+  width: 80%;
+  margin-left: 0px;
   text-transform: uppercase;
   transition: transform 80ms ease-in;
   &:active{
@@ -85,13 +89,6 @@ export const Button = styled.button`
 export const GhostButton = styled(Button)`
   background-color: transparent;
   border-color: #ffffff;
-`;
-
-export const Anchor = styled.a`
-  color: #333;
-  font-size: 14px;
-  text-decoration: none;
-  margin: 15px 0;
 `;
 
 export const OverlayContainer = styled.div`

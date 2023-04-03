@@ -59,22 +59,6 @@ nav a:hover{
     border: 4px dashed #143f85;
 }
 
-.img-upload{
-    margin-left: 50px;
-}
-
-label{
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    margin-left: 20%;
-    color: #143f85;
-}
-
-.image{
-    margin-left: 5%;
-}
-
 .or{
     font-weight: bold;
     color: #143f85;
@@ -82,7 +66,8 @@ label{
     margin-top: 20px;
 }
 
-.scan{
+.scan,
+.img-upload{
     width: 70%;
     border-radius: 5px;
     border: 2px solid #143f85;
@@ -90,4 +75,8 @@ label{
     background-color: #143f85;
     color: #fff;
     margin-top: 0px;
+}
+
+.qrImage{
+    display: none;
 }

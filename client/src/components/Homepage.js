@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import './Homepage.css';
+import QrReader from "react-qr-reader";
 
 export default function Homepage () {
-  
+    const qrRef = useRef(null);
+    const [fileResult, setFileResult] = useState();
+
+    const openDialog = () => {
+        qrRef.current.openImageDialog();
+    }
+
+    const fileError = (error) => {
+        if(error){
+            console.log(error);
+        }
+    }
+
+    const fileScan = (result) => {
+        if(result){
+            setFileResult(result);
+        }
+    }
+
     return(
     <div className='homepage'>
         <div className='header'>
@@ -14,20 +33,24 @@ export default function Homepage () {
                     <li className="a1"><a href="#">INSTRUCTIONS</a></li>
                     <li className="a1"><a href="#">REGISTER</a></li>
                     <li className="a1"><a href="#">LOGIN</a></li>
-                    <li className="a1"><a href="#">SIGN UP</a></li>
+                    <li className="a1"><a href="#">SIGNUP</a></li>
                 </ul>
             </nav>
        </div>
        <br/>
         <div className='upload'>
-            <form>
-                <div className='img-upload'>
-                <label for="image">Upload QR Code</label><br/>
-                <input type="file" accept="image/png, image/jpeg" name="image" className='image' id="image"/>
-                </div>
-                <p className='or'>OR</p>
-                <button className='scan'>Scan QR</button>
-            </form>
+            <button className='img-upload' onClick={openDialog}>Upload QR</button>
+            <p className='or'>OR</p>
+            <button className='scan'>Scan QR</button>
+        </div>
+        <div className='qrImage'>
+            <QrReader
+            ref={qrRef}
+            delay={300}
+            onError={fileError}
+            onScan={fileScan}
+            legacyMode={true}
+            />
         </div>
     </div>
     );

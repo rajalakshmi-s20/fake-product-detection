@@ -5,11 +5,10 @@ import './Login.css';
 export default function Login() {
     const [signIn, toggle] = React.useState(true);
     return(
-        <div className="login-signup">
         <Components.Container>
             <Components.SignUpContainer signinIn={signIn}>
                 <Components.Form>
-                    <Components.Title>REGISTER</Components.Title>
+                    <Components.Title>SIGN UP</Components.Title>
                     <Components.Input type='text' placeholder='Name' id='name'/>
                     <Components.Input type='email' placeholder='Email' id='email'/>
                     <Components.Input type='password' placeholder='Password' id='pass'/>
@@ -23,7 +22,6 @@ export default function Login() {
                     <Components.Input type='email' placeholder='Email' id='email'/>
                     <Components.Input type='password' placeholder='Password' id='pass'/>
                     <Components.Button>Sign In</Components.Button>
-                    <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
                 </Components.Form>
             </Components.SignInContainer>
 
@@ -53,6 +51,5 @@ export default function Login() {
                 </Components.Overlay>
             </Components.OverlayContainer>
         </Components.Container>
-        </div>
     );
 }

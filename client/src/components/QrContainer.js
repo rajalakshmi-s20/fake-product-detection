@@ -1,62 +1,35 @@
-import React, { Component } from 'react';
-import QrReader from 'react-qr-scanner';
+import React, { useState, useRef } from 'react';
+import QrReader from 'react-qr-reader';
+import './QrContainer.css';
 
-class QrContainer extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            result: 'Hold QR Code Steady and Clear to scan',
+export default function QrContainer () {
+    const qrRef = useRef(null);
+    const [webcamResult, setWebcamResult] = useState();
+
+    const webcamError = (error) => {
+        if(error){
+            console.log(error);
         }
-        this.handleScan = this.handleScan.bind(this)
     }
 
-    handleScan(result){
-        this.setState({
-            //result: data
-        })
+    const webscan = (result) => {
+        if(result){
+            setWebcamResult(result);
+        }
     }
 
-    handleError(err)
-    {
-        console.error(err)
-    }
-
-    render(){
-        const previewStyle = {
-            height: 700,
-            width: 1000,
-            display: 'flex',
-            "justify-content": "center"
-        }
-
-        const camstyle = {
-            display: 'flex',
-            justifyContent: "center",
-            marginTop: '-50px'
-        }
-
-        const textStyle = {
-            fontSize: '30px',
-            "text-align": 'center',
-            marginTop: '-50px'
-        }
-
-        return(
-            <React.Fragment>
-                <div style = {camstyle}>
-                    <QrReader
-                        delay={100}
-                        style={previewStyle}
-                        onError={this.handleError}
-                        onScan={this.handleScan}
-                    />
-                </div>
-                <p style = {textStyle}>
-                    {this.state.result}
-                </p>
-            </React.Fragment>
-        )
-    }
+    return(
+    <div className='qrcontainer'>
+        <p className='title'>Hold QR Code Steady and Clear to scan</p>
+        <div className='qr-scan'>
+        <QrReader
+        ref={qrRef}
+        delay={300}
+        onError={webcamError}
+        onScan={webscan}
+        legacyMode={false}
+        />
+        </div>
+    </div>
+    );
 }
-
-export default QrContainer;

@@ -13,6 +13,10 @@ const QrGenerator = () => {
 
   const qrRef = useRef();
 
+  const connectWallet = () => {
+
+  }
+
   const downloadQRCode = (e) => {
     e.preventDefault();
     let canvas = qrRef.current.querySelector("canvas");
@@ -132,7 +136,7 @@ const QrGenerator = () => {
             onChange={handleDate}
           />
           </div>
-          <button type="submit" disabled={!id}> 
+          <button type="submit" disabled={!id} onClick={connectWallet} > 
             Download QR code
           </button>
         </form>

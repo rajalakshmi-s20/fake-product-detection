@@ -1,9 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import QrReader from 'react-qr-reader';
 import './QrContainer.css';
 
 export default function QrContainer () {
-    const qrRef = useRef(null);
     const [webcamResult, setWebcamResult] = useState();
 
     const webcamError = (error) => {
@@ -12,7 +11,7 @@ export default function QrContainer () {
         }
     }
 
-    const webscan = (result) => {
+    const webcamScan = (result) => {
         if(result){
             setWebcamResult(result);
         }
@@ -20,14 +19,14 @@ export default function QrContainer () {
 
     return(
     <div className='qrcontainer'>
-        <p className='title'>Hold QR Code Steady and Clear to scan</p>
+        <p className='title'>Hold QR Code Steady and Clear to Scan</p>
         <div className='qr-scan'>
         <QrReader
-        ref={qrRef}
         delay={300}
         onError={webcamError}
-        onScan={webscan}
+        onScan={webcamScan}
         legacyMode={false}
+        facingMode={"user"}
         />
         </div>
     </div>

@@ -1,6 +1,7 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import './QrGenerator.css';
+import { TransactionContext } from "../context/TransactionContext";
 
 const QrGenerator = () => {
   const [id, setId] = useState("");
@@ -13,9 +14,7 @@ const QrGenerator = () => {
 
   const qrRef = useRef();
 
-  const connectWallet = () => {
-
-  }
+  const { connectWallet, currentAccount } = useContext(TransactionContext);
 
   const downloadQRCode = (e) => {
     e.preventDefault();

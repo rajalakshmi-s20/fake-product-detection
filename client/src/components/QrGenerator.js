@@ -14,7 +14,7 @@ const QrGenerator = () => {
 
   const qrRef = useRef();
 
-  const { connectWallet, currentAccount } = useContext(TransactionContext);
+  const { connectWallet, formData, handleKeyword, handleMessage, sendTransaction } = useContext(TransactionContext);
 
   const downloadQRCode = (e) => {
     e.preventDefault();
@@ -35,12 +35,23 @@ const QrGenerator = () => {
     setLocation("");
   };
 
+  const handleSubmit = (e) => {
+    connectWallet();
+    const { addressTo, amount, keyword, message } = formData;
+
+    if(!addressTo || !amount || !keyword || !message) return;
+
+    sendTransaction();
+  }
+
   const handleId = (e) => {
     setId(e.target.value);
+    handleKeyword(id);
   };
 
   const handleName = (e) => {
     setName(e.target.value);
+    handleMessage(name);
   };
 
   const handleDescription = (e) => {
@@ -82,6 +93,8 @@ const QrGenerator = () => {
           <div>
           <label>Product ID</label>
           <input
+            name="keyword"
+            id="keyword"
             type="text"
             value={id}
             onChange={handleId}
@@ -90,6 +103,8 @@ const QrGenerator = () => {
           <div>
           <label>Product Name</label>
           <input
+            name="message"
+            id="message"
             type="text"
             value={name}
             onChange={handleName}
@@ -135,7 +150,7 @@ const QrGenerator = () => {
             onChange={handleDate}
           />
           </div>
-          <button type="submit" disabled={!id} onClick={connectWallet} > 
+          <button type="submit" disabled={!id} onClick={handleSubmit} > 
             Download QR code
           </button>
         </form>

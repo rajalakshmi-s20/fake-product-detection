@@ -28,6 +28,7 @@ const QrGenerator = () => {
     document.body.appendChild(anchor);
     anchor.click();
     document.body.removeChild(anchor);
+    handleSubmit();
     setId("");
     setName("");
     setDescription("");
@@ -37,10 +38,7 @@ const QrGenerator = () => {
     setLocation("");
   };
 
-  const handleSubmit = (e) => {   
-    handleKeyword(id);
-    handleMessage(name);
-
+  const handleSubmit = () => {   
     connectWallet();
     
     const { addressTo, amount, keyword, message } = formData;
@@ -54,15 +52,17 @@ const QrGenerator = () => {
   const NavigateToResult = () => {
     setTimeout(() => {
         navigate('/', { replace: true });
-    }, 3000);
+    }, 5000);
   }
 
   const handleId = (e) => {
     setId(e.target.value);
+    handleKeyword(e.target.value);
   };
 
   const handleName = (e) => {
     setName(e.target.value);
+    handleMessage(e.target.value);
   };
 
   const handleDescription = (e) => {
@@ -161,7 +161,7 @@ const QrGenerator = () => {
             onChange={handleDate}
           />
           </div>
-          <button type="submit" disabled={!id} onClick={handleSubmit} > 
+          <button type="submit" disabled={!id} > 
             Download QR code
           </button>
         </form>

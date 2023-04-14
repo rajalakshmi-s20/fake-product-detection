@@ -18,7 +18,7 @@ export default function QrContainer () {
     const NavigateToResult = () => {
         setTimeout(() => {
             navigate('/result', { replace: true });
-        }, 1000);
+        }, 3000);
     }
 
     const WebcamScan = (result) => {
@@ -41,6 +41,7 @@ export default function QrContainer () {
         facingMode={"user"}
         />
         </div>
+        <p className='qr-result'>{webcamResult}</p>
     </div>
     );
 }

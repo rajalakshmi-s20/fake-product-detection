@@ -23,7 +23,7 @@ export default function Homepage () {
     const NavigateToResult = () => {
         setTimeout(() => {
             navigate('/result', { replace: true });
-        }, 1000);
+        }, 3000);
     }
 
     const FileScan = (result) => {

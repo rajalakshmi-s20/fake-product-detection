@@ -36,6 +36,9 @@ const QrGenerator = () => {
   };
 
   const handleSubmit = (e) => {
+    handleKeyword(id);
+    handleMessage(name);
+    
     connectWallet();
     const { addressTo, amount, keyword, message } = formData;
 
@@ -46,12 +49,10 @@ const QrGenerator = () => {
 
   const handleId = (e) => {
     setId(e.target.value);
-    handleKeyword(id);
   };
 
   const handleName = (e) => {
     setName(e.target.value);
-    handleMessage(name);
   };
 
   const handleDescription = (e) => {

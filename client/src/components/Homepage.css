@@ -51,6 +51,10 @@ nav a:hover{
     color: #fff;
 }
 
+.scan a:hover{
+    color: #fff;
+}
+
 .upload{
     margin-top: 60px;
     margin-left: 35%;

@@ -1,20 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import QrReader from 'react-qr-reader';
 import './QrContainer.css';
+import { TransactionContext } from "../context/TransactionContext";
+import { useNavigate } from 'react-router-dom';
 
 export default function QrContainer () {
     const [webcamResult, setWebcamResult] = useState();
+    const { handlescannedId, scannedId } = useContext(TransactionContext);
+    const navigate = useNavigate();
 
-    const webcamError = (error) => {
+    const WebcamError = (error) => {
         if(error){
             console.log(error);
         }
     }
 
-    const webcamScan = (result) => {
-        if(result){
+    const NavigateToResult = () => {
+        setTimeout(() => {
+            navigate('/result', { replace: true });
+        }, 2000);
+    }
+
+    const WebcamScan = (result) => {
+        if(result) { 
             setWebcamResult(result);
-        }
+            handlescannedId(webcamResult);
+            if(scannedId) { 
+                NavigateToResult();
+            } else {
+                alert("Error Occurred While Scanning. Please Try Again!");
+            }
+        } 
     }
 
     return(
@@ -23,8 +39,8 @@ export default function QrContainer () {
         <div className='qr-scan'>
         <QrReader
         delay={300}
-        onError={webcamError}
-        onScan={webcamScan}
+        onError={WebcamError}
+        onScan={WebcamScan}
         legacyMode={false}
         facingMode={"user"}
         />

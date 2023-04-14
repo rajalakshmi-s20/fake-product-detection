@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function QrContainer () {
     const [webcamResult, setWebcamResult] = useState();
-    const { handlescannedId, scannedId } = useContext(TransactionContext);
+    const { handlescannedId } = useContext(TransactionContext);
     const navigate = useNavigate();
 
     const WebcamError = (error) => {
@@ -24,12 +24,8 @@ export default function QrContainer () {
     const WebcamScan = (result) => {
         if(result) { 
             setWebcamResult(result);
-            handlescannedId(webcamResult);
-            if(scannedId) { 
-                NavigateToResult();
-            } else {
-                alert("Error Occurred While Scanning. Please Try Again!");
-            }
+            handlescannedId(result);
+            NavigateToResult(); 
         } 
     }
 

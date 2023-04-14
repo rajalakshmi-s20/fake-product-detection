@@ -2,6 +2,7 @@ import { useState, useRef, useContext } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import './QrGenerator.css';
 import { TransactionContext } from "../context/TransactionContext";
+import { useNavigate } from 'react-router-dom';
 
 const QrGenerator = () => {
   const [id, setId] = useState("");
@@ -11,6 +12,7 @@ const QrGenerator = () => {
   const [company, setCompany] = useState("");
   const [date, setDate] = useState("");
   const [location, setLocation] = useState("");
+  const navigate = useNavigate();
 
   const qrRef = useRef();
 
@@ -46,6 +48,13 @@ const QrGenerator = () => {
     if(!addressTo || !amount || !keyword || !message) return;
 
     sendTransaction();
+    NavigateToResult();
+  }
+
+  const NavigateToResult = () => {
+    setTimeout(() => {
+        navigate('/', { replace: true });
+    }, 3000);
   }
 
   const handleId = (e) => {

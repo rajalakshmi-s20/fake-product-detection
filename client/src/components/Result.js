@@ -8,6 +8,7 @@ export default function Result () {
 
     const { scannedId, transactions } = useContext(TransactionContext);
     console.log(transactions);
+    console.log(scannedId);
 
     const result = transactions.some( (transaction) => { 
         if(transaction.keyword === scannedId) {

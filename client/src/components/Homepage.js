@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Homepage () {
     const qrRef = useRef(null);
-    const [fileResult, setFileResult] = useState();
-    const { handlescannedId, scannedId } = useContext(TransactionContext);
+    const [fileResult, setFileResult] = useState("");
+    const { handlescannedId } = useContext(TransactionContext);
     const navigate = useNavigate();
 
     const openDialog = () => {
@@ -29,13 +29,11 @@ export default function Homepage () {
     const FileScan = (result) => {
         if(result) { 
             setFileResult(result);
-            handlescannedId(fileResult);
-            if(scannedId) { 
-                NavigateToResult();
-            } else {
-                alert("Error Occurred While Scanning. Please Try Again!");
-            }
-        } 
+            handlescannedId(result);
+            NavigateToResult();
+        } else {
+            alert("Error Occurred While Scanning. Please Try Again!");
+        }
     }
 
     return(
@@ -67,6 +65,7 @@ export default function Homepage () {
             onScan={FileScan}
             legacyMode={true}
             />
+            <p>{fileResult}</p>
         </div>
     </div>
     );

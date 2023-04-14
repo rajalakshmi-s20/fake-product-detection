@@ -1,5 +1,24 @@
-.result{
-    font-family: cursive;
-    font-size: 1000;
-    color: #000;
+* {
+    box-sizing: border-box;
+}
+
+.correct-icon,
+.wrong-icon{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.result {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.real{
+    color: green;
+}
+
+.fake{ 
+    color: red;
 }

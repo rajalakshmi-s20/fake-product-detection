@@ -35,11 +35,12 @@ const QrGenerator = () => {
     setLocation("");
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => {   
     handleKeyword(id);
     handleMessage(name);
-    
+
     connectWallet();
+    
     const { addressTo, amount, keyword, message } = formData;
 
     if(!addressTo || !amount || !keyword || !message) return;

@@ -8,23 +8,21 @@ export default function Result () {
 
     const { scannedId, transactions } = useContext(TransactionContext);
     console.log(transactions);
-    let result = "false";
-    
-    function check(){ 
-        transactions.map( (transaction) => { 
-            if(transaction.keyword === scannedId)
-            {
-                result = "true";
-            }
-        })
-    }
+
+    const result = transactions.some( (transaction) => { 
+        if(transaction.keyword === scannedId) {
+            return true;
+        }
+        return false;
+    });
 
     return(
-    <div className='result'>
-    <p>{scannedId}</p>
-    <MdVerifiedUser/>
-    <CgDanger/>
-    <p>{result}</p>
+    <div className='result-container'>
+
+    { result && <div className='result'><div className='correct-icon'><MdVerifiedUser style={{ color: 'green', fontSize: '11.5em' }}/></div><h1 className='real'>REAL</h1></div>}
+
+    { !result && <div className='result'><div className='wrong-icon '><CgDanger style={{ color: 'red', fontSize: '11.5em' }}/></div><h1 className='fake'>FAKE</h1></div>}
+
     </div>
     );
 }

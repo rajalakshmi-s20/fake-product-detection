@@ -18,7 +18,7 @@ export default function QrContainer () {
     const NavigateToResult = () => {
         setTimeout(() => {
             navigate('/result', { replace: true });
-        }, 2000);
+        }, 1000);
     }
 
     const WebcamScan = (result) => {

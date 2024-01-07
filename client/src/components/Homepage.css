@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    height: 100vh;
 }
 
 a{
@@ -8,15 +9,12 @@ a{
     color: #fff; 
 }
 
-.header{
-    margin-top: 20px;
-}
-
-
 .header p{
     text-align: center;
-    font-family: cursive;
+    font-family: sans-serif;
+    margin-top: 20px;
     font-size: 25px;
+    color: black;
 }
 
 span{
@@ -24,19 +22,31 @@ span{
 }
 
 .navbar{
-    background-color: #143f85;
-    margin-top: 20px;
+    background-color: black;
+}
+
+.navbar p{
+    display: inline;
 }
 
 nav ul{
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 nav li{
     display: inline;
+    float: right;
+    margin-right: 25px;
+}
+
+.logo{
+    display: inline;
     float: left;
+    font-family: fantasy;
     margin-left: 25px;
+    font-size: 20px;
 }
 
 nav a{
@@ -56,16 +66,16 @@ nav a:hover{
 }
 
 .upload{
-    margin-top: 60px;
-    margin-left: 35%;
+    margin-top: 10px;
+    margin: auto;
     padding: 30px;
     width: 35%;
-    border: 4px dashed #143f85;
+    border: 4px dashed black;
 }
 
 .or{
     font-weight: bold;
-    color: #143f85;
+    color: black;
     margin-left: 45%;
     margin-top: 20px;
 }
@@ -74,13 +84,28 @@ nav a:hover{
 .img-upload{
     width: 70%;
     border-radius: 5px;
-    border: 2px solid #143f85;
+    border: 2px solid #ff4b2b;
     padding: 10px;
-    background-color: #143f85;
+    background-color: #ff4b2b;
     color: #fff;
     margin-top: 0px;
 }
 
 .qrImage{
     display: none;
+}
+
+.footer{
+    background-color: black;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+.footer p{
+    margin-top: 15px;
+    text-align: center;
+    font-family: sans-serif;
+    color: #fff;
 }

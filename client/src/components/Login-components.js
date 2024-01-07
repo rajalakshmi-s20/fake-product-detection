@@ -8,9 +8,9 @@ export const Container = styled.div`
   overflow: hidden;
   width: 678px;
   max-width: 100%;
-  margin-top: 100px;
-  margin-left: 300px;
   min-height: 400px;
+  margin: auto;
+  top: 75px;
 `;
 
 export const SignUpContainer = styled.div`
@@ -148,7 +148,7 @@ export const RightOverlayPanel = styled(OverlayPanel)`
 `;
 
 export const Paragraph = styled.p`
-font-size: 14px;
+  font-size: 14px;
   font-weight: 100;
   line-height: 20px;
   letter-spacing: 0.5px;

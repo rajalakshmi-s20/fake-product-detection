@@ -5,10 +5,9 @@ import { TransactionContext } from "../context/TransactionContext";
 import { useNavigate } from 'react-router-dom';
 
 const QrGenerator = () => {
-  const [id, setId] = useState("");
+  const [uid, setUid] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [manufacturer, setManufacturer] = useState("");
   const [company, setCompany] = useState("");
   const [date, setDate] = useState("");
   const [location, setLocation] = useState("");
@@ -17,6 +16,8 @@ const QrGenerator = () => {
   const qrRef = useRef();
 
   const { connectWallet, formData, handleKeyword, handleMessage, sendTransaction } = useContext(TransactionContext);
+
+  const API_URL="http://localhost:3001/";
 
   const downloadQRCode = (e) => {
     e.preventDefault();
@@ -29,10 +30,10 @@ const QrGenerator = () => {
     anchor.click();
     document.body.removeChild(anchor);
     handleSubmit();
-    setId("");
+    Add_details();
+    setUid("");
     setName("");
     setDescription("");
-    setManufacturer("");
     setCompany("");
     setDate("");
     setLocation("");
@@ -55,8 +56,26 @@ const QrGenerator = () => {
     }, 5000);
   }
 
+  async function Add_details(){
+    const data = new FormData();
+    data.append("uid",uid);
+    data.append("name",name);
+    data.append("description",description);
+    data.append("company",company);
+    data.append("location",location);
+    data.append("date",date);
+
+    fetch(API_URL+"api",{
+      method:"POST",
+      body:data
+    }).then(res => res.json())
+    .then((result) => {
+      alert(result);
+    })
+  }
+
   const handleId = (e) => {
-    setId(e.target.value);
+    setUid(e.target.value);
     handleKeyword(e.target.value);
   };
 
@@ -67,10 +86,6 @@ const QrGenerator = () => {
 
   const handleDescription = (e) => {
     setDescription(e.target.value);
-  };
-
-  const handleManufacturer = (e) => {
-    setManufacturer(e.target.value);
   };
 
   const handleCompany = (e) => {
@@ -88,7 +103,7 @@ const QrGenerator = () => {
   const qrcode = (
     <QRCodeCanvas
       id="qrCode"
-      value={id}
+      value={uid}
       size={200}
       level={"H"}
     />
@@ -98,16 +113,18 @@ const QrGenerator = () => {
     <div className="qrcode_container">
       <div className="qrcode">
       <div ref={qrRef}>{qrcode}</div>
+      <p>Product QR Code</p>
       </div>
       <div className="input_group">
         <form onSubmit={downloadQRCode}>
+          <p>Product Details</p>
           <div>
           <label>Product ID</label>
           <input
             name="keyword"
             id="keyword"
             type="text"
-            value={id}
+            value={uid}
             onChange={handleId}
           />
           </div>
@@ -122,7 +139,7 @@ const QrGenerator = () => {
           />
           </div>
           <div>
-          <label>Product Description</label>
+          <label>Description</label>
           <input
             type="text"
             value={description}
@@ -130,15 +147,7 @@ const QrGenerator = () => {
           />
           </div>
           <div>
-          <label>Registered By</label>
-          <input
-            type="text"
-            value={manufacturer}
-            onChange={handleManufacturer}
-          />
-          </div>
-          <div>
-          <label>Manufactured Company</label>
+          <label>Manufactured By</label>
           <input
             type="text"
             value={company}
@@ -146,7 +155,7 @@ const QrGenerator = () => {
           />
           </div>
           <div>
-          <label>Company Location</label>
+          <label>Manufactured Location</label>
           <input
             type="text"
             value={location}
@@ -154,15 +163,15 @@ const QrGenerator = () => {
           />
           </div>
           <div>
-          <label>Manufactured date</label>
+          <label>Manufactured Date</label>
           <input
             type="text"
             value={date}
             onChange={handleDate}
           />
           </div>
-          <button type="submit" disabled={!id} > 
-            Download QR code
+          <button type="submit" disabled={!uid}> 
+          <span>Submit</span>
           </button>
         </form>
       </div>

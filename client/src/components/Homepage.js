@@ -39,17 +39,19 @@ export default function Homepage () {
     return(
     <div className='homepage'>
         <div className='header'>
-            <p>QR CODE FOR PRODUCT DETECTION <span>USING BLOCKCHAIN</span></p>
             <nav className='navbar'>
                 <ul>
+                    <li className='logo'><a href="http://localhost:3000/">VERIFY</a></li>
+                    <li className="a1"><a href="http://localhost:3000/login">LOGIN/SIGNUP</a></li>
+                    <li className="a1"><a href="http://localhost:3000/qrgenerator/">REGISTER PRODUCT</a></li>
+                    <li className="a1"><a href="http://localhost:3000/">CONTACT</a></li>
+                    <li className="a1"><a href="http://localhost:3000/">HELP</a></li>
+                    <li className="a1"><a href="http://localhost:3000/">FAQs</a></li>
+                    <li className="a1"><a href="http://localhost:3000/">ABOUT US</a></li>
                     <li className="a1"><a href="http://localhost:3000/">HOME</a></li>
-                    <li className="a1"><a href="http://localhost:3000/">ABOUT</a></li>
-                    <li className="a1"><a href="http://localhost:3000/">INSTRUCTIONS</a></li>
-                    <li className="a1"><a href="http://localhost:3000/qrgenerator/">REGISTER</a></li>
-                    <li className="a1"><a href="http://localhost:3000/login">LOGIN</a></li>
-                    <li className="a1"><a href="http://localhost:3000/login">SIGNUP</a></li>
                 </ul>
             </nav>
+            <p>FAKE PRODUCT DETECTION <span>USING BLOCKCHAIN</span></p>
        </div>
        <br/>
         <div className='upload'>
@@ -66,6 +68,10 @@ export default function Homepage () {
             legacyMode={true}
             />
             <p>{fileResult}</p>
+        </div>
+        <br/>
+        <div className="footer">
+            <p>copyright &copy; 2024 verify</p>
         </div>
     </div>
     );

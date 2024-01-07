@@ -31,10 +31,10 @@ export default function QrContainer () {
 
     return(
     <div className='qrcontainer'>
-        <p className='title'>Hold QR Code Steady and Clear to Scan</p>
+        <p className='title'>Hold QR Steady and Clear to Scan</p>
         <div className='qr-scan'>
         <QrReader
-        delay={300}
+        delay={500}
         onError={WebcamError}
         onScan={WebcamScan}
         legacyMode={false}
@@ -42,6 +42,8 @@ export default function QrContainer () {
         />
         </div>
         <p className='qr-result'>{webcamResult}</p>
+        <br></br>
+        {webcamResult && <p className='loader'>Please wait...</p>}
     </div>
     );
 }

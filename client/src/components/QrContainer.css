@@ -1,13 +1,33 @@
-section{
+.qrcontainer{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+}
+
+.qr-scan{
     width: 400px;
     height: 400px;
-    margin-top: 50px;
-    margin-left: 217px;
+    margin: auto;
+    border: 2px solid black;
+}
+
+.qr-scan section div{
+    box-shadow: unset !important;     
+    border: unset !important;
 }
 
 .title{
+    margin-top: 20px;
     text-align: center;
     font-size: 20px;
+    font-family: fantasy;
+}
+
+.loader{
+    text-align: center;
+    font-size: 20px;
+    color: green;
     font-weight: bold;
-    margin-top: 30px;
 }

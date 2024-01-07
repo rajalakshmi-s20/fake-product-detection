@@ -57,7 +57,7 @@ export const TransactionProvider = ({ children }) => {
         try{ 
             if(!ethereum) return alert("Please install metamask");
 
-            const accounts = await ethereum.request({ method: 'eth_accounts' });
+            const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
 
             if(accounts.length){ 
                 setCurrentAccount(accounts[0]);
@@ -83,7 +83,7 @@ export const TransactionProvider = ({ children }) => {
         } catch (error) {
             console.log(error);
 
-            throw new Error("No ethereum object");
+            //throw new Error("No ethereum object");
         }
     }
     
@@ -138,6 +138,7 @@ export const TransactionProvider = ({ children }) => {
     useEffect(() => {
         checkIfWalletIsConnected();
         checkIfTransactionsExist();
+        // eslint-disable-next-line
     }, []);
 
     return(

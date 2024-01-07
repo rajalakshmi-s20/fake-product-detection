@@ -2,14 +2,16 @@
     box-sizing: border-box;
 }
 
-.correct-icon,
-.wrong-icon{
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
+.result-container{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
 }
 
 .result {
+    margin: auto;
     text-align: center;
     font-weight: bold;
     font-family: 'Times New Roman', Times, serif;
@@ -17,8 +19,27 @@
 
 .real{
     color: green;
+    font-family: fantasy;
 }
 
 .fake{ 
     color: red;
+    font-family: fantasy;
+}
+
+dl{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 30%;
+    margin: auto;
+}
+
+dt{
+    font-weight: bold;
+    padding: 2px;
+    width: 2px;
+}
+
+dd{
+    padding: 2px;
 }

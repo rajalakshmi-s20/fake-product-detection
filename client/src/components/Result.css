@@ -43,3 +43,14 @@ dt{
 dd{
     padding: 2px;
 }
+
+.home-btn{
+    border-radius: 5px;
+    border: 2px solid green;
+    background-color: green;
+    color: #fff;
+    width: 10%;
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+}

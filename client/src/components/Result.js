@@ -84,6 +84,7 @@ export default function Result () {
             <dd>: {date}</dd>
         </dl>
     </div>}
+    <div className='home-btn'><a href='http://localhost:3000/'>Home</a></div>
     </div>
     );
 }

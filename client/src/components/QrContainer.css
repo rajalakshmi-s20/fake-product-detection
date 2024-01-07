@@ -7,15 +7,16 @@
 }
 
 .qr-scan{
+    margin: auto;
     width: 400px;
     height: 400px;
-    margin: auto;
     border: 2px solid black;
 }
 
-.qr-scan section div{
-    box-shadow: unset !important;     
-    border: unset !important;
+.qr-scan video{
+    margin: auto;
+    height: 396px;
+    width: 396px;
 }
 
 .title{

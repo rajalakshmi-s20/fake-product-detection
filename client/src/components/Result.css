@@ -44,6 +44,20 @@ dd{
     padding: 2px;
 }
 
+.warning-msg{
+    margin: auto;
+    width: 50%;
+}
+
+.warning-msg p span{
+    display: inline;
+    font-weight: bold;
+}
+
+.warning-msg p{
+    text-align: justify;
+}
+
 .home-btn{
     border-radius: 5px;
     border: 2px solid green;

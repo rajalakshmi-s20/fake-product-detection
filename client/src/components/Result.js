@@ -30,6 +30,7 @@ export default function Result () {
         if(result){ 
         Get_details();
         }
+        // eslint-disable-next-line
     }, []);      
 
     async function Get_details(){
@@ -60,6 +61,13 @@ export default function Result () {
             <CgDanger style={{ color: 'red', fontSize: '8.5em' }}/>
         </div>
         <h1 className='fake'>FAKE</h1>
+    </div>}
+
+    { !result && <div className='warning-msg'>
+        <p>we regret to inform you that the product you submitted has been identified as counterfeit.</p>
+        <p><span>Cease Usage:</span> Discontinue the use of the identified product immediately as it may not meet our quality standards or could pose potential risks.</p>
+        <p><span>Report the Incident:</span> File a report with your local authorities or consumer protection agency to assist in preventing the circulation of counterfeit goods.</p>
+        <p><span>Provide Additional Information:</span> If you have any additional details about the purchase, such as the seller, location, or any other relevant information, please share it with us to aid in our ongoing efforts to combat counterfeit products.</p>   
     </div>}
 
     { result && <div className='product-details'>

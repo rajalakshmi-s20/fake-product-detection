@@ -124,6 +124,7 @@ const QrGenerator = () => {
             name="keyword"
             id="keyword"
             type="text"
+            autoComplete="off"
             value={uid}
             onChange={handleId}
           />
@@ -134,6 +135,7 @@ const QrGenerator = () => {
             name="message"
             id="message"
             type="text"
+            autoComplete="off"
             value={name}
             onChange={handleName}
           />
@@ -142,6 +144,7 @@ const QrGenerator = () => {
           <label>Description</label>
           <input
             type="text"
+            autoComplete="off"
             value={description}
             onChange={handleDescription}
           />
@@ -150,6 +153,7 @@ const QrGenerator = () => {
           <label>Manufactured By</label>
           <input
             type="text"
+            autoComplete="off"
             value={company}
             onChange={handleCompany}
           />
@@ -158,6 +162,7 @@ const QrGenerator = () => {
           <label>Manufactured Location</label>
           <input
             type="text"
+            autoComplete="off"
             value={location}
             onChange={handleLocation}
           />
@@ -166,6 +171,7 @@ const QrGenerator = () => {
           <label>Manufactured Date</label>
           <input
             type="text"
+            autoComplete="off"
             value={date}
             onChange={handleDate}
           />

@@ -67,9 +67,9 @@ export default function Login() {
             <Components.SignUpContainer signinIn={signIn}>
                 <Components.Form onSubmit={create_account}>
                     <Components.Title>SIGN UP</Components.Title>
-                    <Components.Input type='text' placeholder='Customer Id' id='cid' onChange={(e) => {setCid(e.target.value)}}/>
-                    <Components.Input type='email' placeholder='Email Id' id='email' onChange={(e) => {setEmail(e.target.value)}}/>
-                    <Components.Input type='password' placeholder='Password' id='pwd' onChange={(e) => {setPwd(e.target.value)}}/>
+                    <Components.Input type='text' placeholder='Customer Id' id='cid' autoComplete="off" onChange={(e) => {setCid(e.target.value)}}/>
+                    <Components.Input type='email' placeholder='Email Id' id='email' autoComplete="off" onChange={(e) => {setEmail(e.target.value)}}/>
+                    <Components.Input type='password' placeholder='Password' id='pwd' autoComplete="off" onChange={(e) => {setPwd(e.target.value)}}/>
                     <Components.Button type="submit">Sign Up</Components.Button>
                 </Components.Form>
             </Components.SignUpContainer>
@@ -77,8 +77,8 @@ export default function Login() {
             <Components.SignInContainer signinIn={signIn}>
                 <Components.Form onSubmit={verify_account}>
                     <Components.Title>LOGIN</Components.Title>
-                    <Components.Input type='email' placeholder='Email' id='emailId' onChange={(e) => {setEmailId(e.target.value)}}/>
-                    <Components.Input type='password' placeholder='Password' id='password' onChange={(e) => {setPassword(e.target.value)}}/>
+                    <Components.Input type='email' placeholder='Email' id='emailId' autoComplete="off" onChange={(e) => {setEmailId(e.target.value)}}/>
+                    <Components.Input type='password' placeholder='Password' id='password' autoComplete="off" onChange={(e) => {setPassword(e.target.value)}}/>
                     <Components.Button type="submit">Sign In</Components.Button>
                 </Components.Form>
             </Components.SignInContainer>
